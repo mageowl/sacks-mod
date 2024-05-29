@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "id": "sacks",
+  "version": "${version}",
+  "name": "Sacks",
+  "description": "Early-game shulker boxes with 9 slots",
+  "authors": [
+    "mageowl"
+  ],
+  "contact": {
+    "repo": "https://github.com/mageowl/sacks"
+  },
+  "license": "MIT",
+  "icon": "assets/sacks/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "com.mageowlstudios.sacks.client.SacksClient"
+    ],
+    "main": [
+      "com.mageowlstudios.sacks.SacksMod"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
