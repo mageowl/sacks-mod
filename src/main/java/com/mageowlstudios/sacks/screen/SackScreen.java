@@ -29,7 +29,7 @@ public class SackScreen extends HandledScreen<SackScreenHandler> {
 
    @Override
    public void render(DrawContext context, int mouseX, int mouseY, float delta) {
-      drawBackground(context, delta, mouseX, mouseY);
+      this.renderBackground(context);
       super.render(context, mouseX, mouseY, delta);
       drawMouseoverTooltip(context, mouseX, mouseY);
    }
