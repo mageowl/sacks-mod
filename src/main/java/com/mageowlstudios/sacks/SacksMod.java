@@ -2,6 +2,7 @@ package com.mageowlstudios.sacks;
 
 import com.mageowlstudios.sacks.block.ModBlocks;
 import com.mageowlstudios.sacks.block.entity.ModBlockEntities;
+import com.mageowlstudios.sacks.item.ModItems;
 import com.mageowlstudios.sacks.screen.ModScreens;
 import net.fabricmc.api.ModInitializer;
 import org.slf4j.Logger;
@@ -13,7 +14,8 @@ public class SacksMod implements ModInitializer {
 
    @Override
    public void onInitialize() {
-      ModBlocks.registerModBlocks();
+      ModBlocks.registerBlocks();
+      ModItems.registerItems();
       ModBlockEntities.registerBlockEntities();
       ModScreens.registerScreens();
    }

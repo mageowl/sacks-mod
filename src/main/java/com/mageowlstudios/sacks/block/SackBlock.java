@@ -1,12 +1,10 @@
 package com.mageowlstudios.sacks.block;
 
-import com.mageowlstudios.sacks.block.entity.ModBlockEntities;
 import com.mageowlstudios.sacks.block.entity.SackBlockEntity;
-import net.fabricmc.fabric.api.screenhandler.v1.ExtendedScreenHandlerFactory;
+import com.mageowlstudios.sacks.item.ModItems;
 import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.entity.BlockEntityType;
-import net.minecraft.block.entity.ShulkerBoxBlockEntity;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.ItemEntity;
 import net.minecraft.entity.LivingEntity;
@@ -19,14 +17,11 @@ import net.minecraft.loot.context.LootContextParameters;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.nbt.NbtElement;
 import net.minecraft.screen.NamedScreenHandlerFactory;
-import net.minecraft.sound.SoundCategory;
-import net.minecraft.sound.SoundEvents;
 import net.minecraft.text.MutableText;
 import net.minecraft.text.Text;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Formatting;
 import net.minecraft.util.Hand;
-import net.minecraft.util.ItemScatterer;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
@@ -88,7 +83,7 @@ public class SackBlock extends BlockWithEntity implements BlockEntityProvider {
       BlockEntity blockEntity = world.getBlockEntity(pos);
       if (blockEntity instanceof SackBlockEntity sackBlockEntity) {
          if (!world.isClient && player.isCreative() && !sackBlockEntity.isEmpty()) {
-            ItemStack itemStack = new ItemStack(ModBlocks.SACK_ITEM);
+            ItemStack itemStack = new ItemStack(ModItems.SACK);
             blockEntity.setStackNbt(itemStack);
             if (sackBlockEntity.hasCustomName()) {
                itemStack.setCustomName(sackBlockEntity.getCustomName());
@@ -175,4 +170,6 @@ public class SackBlock extends BlockWithEntity implements BlockEntityProvider {
       }
       return super.getDroppedStacks(state, builder);
    }
+
+
 }

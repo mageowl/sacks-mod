@@ -1,11 +1,8 @@
 package com.mageowlstudios.sacks.block.entity;
 
-import com.mageowlstudios.sacks.block.SackBlock;
 import com.mageowlstudios.sacks.screen.SackScreenHandler;
 import net.fabricmc.fabric.api.screenhandler.v1.ExtendedScreenHandlerFactory;
-import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
-import net.minecraft.block.ShulkerBoxBlock;
 import net.minecraft.block.entity.LootableContainerBlockEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
@@ -95,7 +92,7 @@ public class SackBlockEntity extends LootableContainerBlockEntity implements Sid
 
    @Override
    public boolean canInsert(int slot, ItemStack stack, @Nullable Direction dir) {
-      return !(Block.getBlockFromItem(stack.getItem()) instanceof SackBlock) && stack.getItem().canBeNested();
+      return stack.getItem().canBeNested();
    }
 
    @Override
