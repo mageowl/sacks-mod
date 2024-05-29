@@ -24,13 +24,9 @@ public class SackScreen extends HandledScreen<SackScreenHandler> {
 
    @Override
    protected void drawBackground(DrawContext context, float delta, int mouseX, int mouseY) {
-      RenderSystem.setShader(GameRenderer::getPositionTexProgram);
-      RenderSystem.setShaderColor(1f, 1f, 1f, 1f);
-      RenderSystem.setShaderTexture(0, TEXTURE);
-      int x = (width - backgroundWidth) / 2;
-      int y = (height - backgroundHeight) / 2;
-
-      context.drawTexture(TEXTURE, x, y, 0, 0, backgroundWidth, backgroundHeight);
+      int i = (this.width - this.backgroundWidth) / 2;
+      int j = (this.height - this.backgroundHeight) / 2;
+      context.drawTexture(TEXTURE, i, j, 0, 0, this.backgroundWidth, this.backgroundHeight);
    }
 
    @Override
