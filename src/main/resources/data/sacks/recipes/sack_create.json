@@ -10,7 +10,7 @@
       "item": "minecraft:string"
     },
     "I": {
-      "item": "minecraft:iron_ingot"
+      "item": "create:iron_sheet"
     },
     "#": {
       "item": "minecraft:leather"
@@ -24,13 +24,10 @@
   },
   "fabric:load_conditions": [
     {
-      "condition": "fabric:not",
-      "value": {
-        "condition": "fabric:all_mods_loaded",
-        "values": [
-          "create"
-        ]
-      }
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "create"
+      ]
     }
   ]
 }
