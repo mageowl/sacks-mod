@@ -1,4 +1,21 @@
 {
   "block.sacks.sack": "Sack",
+  "block.sacks.white_sack": "White Sack",
+  "block.sacks.light_gray_sack": "Light Gray Sack",
+  "block.sacks.gray_sack": "Gray Sack",
+  "block.sacks.black_sack": "Black Sack",
+  "block.sacks.brown_sack": "Brown Sack",
+  "block.sacks.red_sack": "Red Sack",
+  "block.sacks.orange_sack": "Orange Sack",
+  "block.sacks.yellow_sack": "Yellow Sack",
+  "block.sacks.lime_sack": "Lime Sack",
+  "block.sacks.green_sack": "Green Sack",
+  "block.sacks.cyan_sack": "Cyan Sack",
+  "block.sacks.light_blue_sack": "Light Blue Sack",
+  "block.sacks.blue_sack": "Blue Sack",
+  "block.sacks.purple_sack": "Purple Sack",
+  "block.sacks.magenta_sack": "Magenta Sack",
+  "block.sacks.pink_sack": "Pink Sack",
+
   "container.sacks.sack": "Sack"
 }

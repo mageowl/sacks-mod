@@ -1,7 +1,6 @@
 package com.mageowlstudios.sacks.block;
 
 import com.mageowlstudios.sacks.block.entity.SackBlockEntity;
-import com.mageowlstudios.sacks.item.ModItems;
 import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.entity.BlockEntityType;
@@ -20,6 +19,7 @@ import net.minecraft.screen.NamedScreenHandlerFactory;
 import net.minecraft.text.MutableText;
 import net.minecraft.text.Text;
 import net.minecraft.util.ActionResult;
+import net.minecraft.util.DyeColor;
 import net.minecraft.util.Formatting;
 import net.minecraft.util.Hand;
 import net.minecraft.util.collection.DefaultedList;
@@ -38,9 +38,75 @@ public class SackBlock extends BlockWithEntity implements BlockEntityProvider {
    private static final VoxelShape NECK_SHAPE = VoxelShapes.union(Block.createCuboidShape(4.8, 11.8, 4.8, 11.2, 13.2, 11.2), Block.createCuboidShape(4.1, 13.1, 4.1, 11.9, 15.9, 11.9));
    private static final VoxelShape OUTLINE_SHAPE = VoxelShapes.union(BASE_SHAPE, NECK_SHAPE);
    private static final VoxelShape COLLISION_SHAPE = VoxelShapes.union(BASE_SHAPE, Block.createCuboidShape(4.1, 11.8, 4.1, 11.9, 15.9, 11.9));
+   @Nullable
+   private final DyeColor color;
 
-   public SackBlock(Settings settings) {
+   public SackBlock(Settings settings, @Nullable DyeColor color) {
       super(settings);
+      this.color = color;
+   }
+
+   public static Block get(@Nullable DyeColor color) {
+      if (color == null) {
+         return ModBlocks.SACK;
+      } else {
+         switch (color) {
+            case WHITE -> {
+               return ModBlocks.WHITE_SACK;
+            }
+            case ORANGE -> {
+               return ModBlocks.ORANGE_SACK;
+            }
+            case MAGENTA -> {
+               return ModBlocks.MAGENTA_SACK;
+            }
+            case LIGHT_BLUE -> {
+               return ModBlocks.LIGHT_BLUE_SACK;
+            }
+            case YELLOW -> {
+               return ModBlocks.YELLOW_SACK;
+            }
+            case LIME -> {
+               return ModBlocks.LIME_SACK;
+            }
+            case PINK -> {
+               return ModBlocks.PINK_SACK;
+            }
+            case GRAY -> {
+               return ModBlocks.GRAY_SACK;
+            }
+            case LIGHT_GRAY -> {
+               return ModBlocks.LIGHT_GRAY_SACK;
+            }
+            case CYAN -> {
+               return ModBlocks.CYAN_SACK;
+            }
+            case PURPLE -> {
+               return ModBlocks.PURPLE_SACK;
+            }
+            case BLUE -> {
+               return ModBlocks.BLUE_SACK;
+            }
+            case BROWN -> {
+               return ModBlocks.BROWN_SACK;
+            }
+            case GREEN -> {
+               return ModBlocks.GREEN_SACK;
+            }
+            case RED -> {
+               return ModBlocks.RED_SACK;
+            }
+            case BLACK -> {
+               return ModBlocks.BLACK_SACK;
+            }
+            default -> {
+               return ModBlocks.SACK;
+            }
+         }
+      }
+   }
+   public static ItemStack getItemStack(@Nullable DyeColor color) {
+      return new ItemStack(get(color));
    }
 
    @SuppressWarnings("deprecation")
@@ -83,7 +149,7 @@ public class SackBlock extends BlockWithEntity implements BlockEntityProvider {
       BlockEntity blockEntity = world.getBlockEntity(pos);
       if (blockEntity instanceof SackBlockEntity sackBlockEntity) {
          if (!world.isClient && player.isCreative() && !sackBlockEntity.isEmpty()) {
-            ItemStack itemStack = new ItemStack(ModItems.SACK);
+            ItemStack itemStack = getItemStack(this.color);
             blockEntity.setStackNbt(itemStack);
             if (sackBlockEntity.hasCustomName()) {
                itemStack.setCustomName(sackBlockEntity.getCustomName());
@@ -170,6 +236,4 @@ public class SackBlock extends BlockWithEntity implements BlockEntityProvider {
       }
       return super.getDroppedStacks(state, builder);
    }
-
-
 }

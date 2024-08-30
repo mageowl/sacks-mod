@@ -1,6 +1,7 @@
 # Sacks
 
 A single feature mod that adds sacks crafted with leather, string, and iron that can hold up to 9 stacks of items. When broken, they keep their items inside them similar to a shulker box, allowing for easy transportation.
+They can also be dyed.
 
 <details>
 <summary>Crafting Recipe</summary>

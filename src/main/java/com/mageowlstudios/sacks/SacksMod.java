@@ -3,6 +3,7 @@ package com.mageowlstudios.sacks;
 import com.mageowlstudios.sacks.block.ModBlocks;
 import com.mageowlstudios.sacks.block.entity.ModBlockEntities;
 import com.mageowlstudios.sacks.item.ModItems;
+import com.mageowlstudios.sacks.recipe.ModRecipeSerializers;
 import com.mageowlstudios.sacks.screen.ModScreens;
 import net.fabricmc.api.ModInitializer;
 import org.slf4j.Logger;
@@ -18,5 +19,6 @@ public class SacksMod implements ModInitializer {
       ModItems.registerItems();
       ModBlockEntities.registerBlockEntities();
       ModScreens.registerScreens();
+      ModRecipeSerializers.registerRecipeSerializers();
    }
 }

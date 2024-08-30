@@ -1,0 +1,8 @@
+{
+  "parent": "sacks:block/sack",
+  "textures": {
+    "side": "sacks:block/light_gray_sack_side",
+    "base": "sacks:block/light_gray_sack_base",
+    "particle": "sacks:block/light_gray_sack_side"
+  }
+}
